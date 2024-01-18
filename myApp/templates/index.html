@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <style>
+      .navbar-menu.is-active {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 180px;
+        height: 220px;
+        z-index: -1;
+      }
+
+      .navbar-menu.is-active .navbar-start {
+        margin-top: 2.5rem;
+      }
+
+      .navbar-menu.is-active .navbar-start a {
+        position: relative;
+        right: 0.8rem;
+      }
+
+      .navbar-start {
+        position: absolute;
+        right: 0;
+      }
+
+      .hero-body figure {
+        margin-top: 3rem;
+        float: left;
+      }
+
+      .button {
+        margin-top: 1rem;
+        margin-right: 1rem;
+      }
+
+      .card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card-content {
+        flex-grow: 1;
+      }
+
+      .lang {
+        width: 50px !important;
+        padding: 5rem;
+      }
+    </style>
+    <title>Marian Neacsu - Portafolio Web</title>
+  </head>
+  <body>
+    {% load static %}
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="#" onclick="window.location.reload(true);">
+          <img
+            src="{% static 'myApp/media/dev.png' %}"
+            width="100%"
+            height="auto"
+          />
+        </a>
+
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navMenu"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div class="navbar-menu" id="navMenu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="#sobremi">SOBRE MÍ</a>
+          <a class="navbar-item" href="#conocimientos">CONOCIMIENTOS</a>
+          <a class="navbar-item" href="#proyectos">PROYECTOS</a>
+          <a class="navbar-item" href="#contactar">CONTACTAR</a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-body">
+        <figure class="image is-128x128 mr-6">
+          <img src="{% static 'myApp/media/avatar.webp' %}" />
+        </figure>
+        <div class="is-flex is-flex-direction-column">
+          <p class="title mt-6">Marian Neacsu</p>
+          <p class="subtitle">Trainee Developer</p>
+        </div>
+        <div class="is-flex is-flex-direction-column" style="width: 150px">
+          <a class="button is-dark" href="https://github.com/pex06">GitHub</a>
+          <a
+            class="button"
+            href="{% static 'myApp/pdf/CV - Marian Neacsu.pdf' %}"
+            >Descargar CV
+            <img
+              class="image is-16x16 ml-2"
+              src="{% static 'myApp/media/downloads.png' %}"
+              alt=""
+          /></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="title" id="sobremi">Sobre mí</h2>
+      <p class="subtitle mt-1">
+        <b>¡Hola mundo!</b> 👋 <br />
+        Mi nombre es Marian, soy un apasionado del desarrollo web y de
+        aplicaciones en Python.
+      </p>
+    </section>
+
+    <section
+      class="section is-flex is-flex-direction-column is-align-items-center"
+    >
+      <h2 class="title is-align-self-flex-start" id="conocimientos">
+        Conocimientos
+      </h2>
+      <div class="columns is-multiline is-flex">
+        <div class="column is-2 lang">
+          <figure class="image is-48x48">
+            <img src="{% static 'myApp/media/python.png' %}" />
+          </figure>
+        </div>
+
+        <div class="column is-2 lang">
+          <figure class="image is-48x48">
+            <img src="{% static 'myApp/media/html-5.png' %}" />
+          </figure>
+        </div>
+
+        <div class="column is-2 lang">
+          <figure class="image is-48x48">
+            <img src="{% static 'myApp/media/css-3.png' %}" />
+          </figure>
+        </div>
+
+        <div class="column is-2 lang">
+          <figure class="image is-48x48">
+            <img src="{% static 'myApp/media/js.png' %}" />
+          </figure>
+        </div>
+
+        <div class="column is-2 lang">
+          <figure class="image is-48x48">
+            <img src="{% static 'myApp/media/git.png' %}" />
+          </figure>
+        </div>
+
+        <div class="column is-2 lang">
+          <figure class="image is-48x48">
+            <img src="{% static 'myApp/media/github.png' %}" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="title" id="proyectos">Proyectos</h2>
+      <div class="columns is-multiline">
+        <div class="column is-4">
+          <div class="card">
+            <div class="card-content">
+              <p class="title">Portafolio</p>
+              <p class="subtitle">
+                Este proyecto es una página web personal. Para el desarrollo
+                Front End se utilizaron HTML, Bulma y JS. Por otra parte, el
+                desarrollo Back End está hecho con Django.
+              </p>
+            </div>
+            <footer class="card-footer">
+              <a
+                href="https://github.com/pex06/portafolio-web"
+                class="card-footer-item"
+                target="_blank"
+              >
+                GitHub Link
+              </a>
+            </footer>
+          </div>
+        </div>
+
+        <div class="column is-4">
+          <div class="card">
+            <div class="card-content">
+              <p class="title">Python Candy Crush</p>
+              <p class="subtitle">
+                Los jugadores eligen los caramelos con los que quieren jugar.
+                Tienen que hacer coincidir tres caramelos en una fila o columna
+                para obtener puntos.
+              </p>
+            </div>
+            <footer class="card-footer">
+              <a
+                href="https://github.com/pex06/python_candy_crush"
+                class="card-footer-item"
+                target="_blank"
+              >
+                GitHub Link
+              </a>
+            </footer>
+          </div>
+        </div>
+
+        <div class="column is-4">
+          <div class="card">
+            <div class="card-content">
+              <p class="title">Retos de Programación</p>
+              <p class="subtitle">
+                Repositorio compartido en GitHub con ejercicios de la comunidad
+                MoureDev. En la rama "pex" pueden encontrar mis soluciones a
+                algunos de estos ejercicios.
+              </p>
+            </div>
+            <footer class="card-footer">
+              <a
+                href="https://github.com/aitortxu20/Retos-de-Programacion"
+                class="card-footer-item"
+                target="_blank"
+              >
+                GitHub Link
+              </a>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <form method="post" action="{% url 'contact' %}">
+      {% csrf_token %}
+      <section class="section">
+        <h2 class="title is-align-self-flex-start" id="contactar">Contactar</h2>
+
+        <div class="field">
+          <label class="label">Tu Email</label>
+          <div class="control has-icons-left has-icons-right">
+            <input
+              class="input"
+              type="email"
+              placeholder="Introduce tu email"
+              name="email"
+            />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Mensaje</label>
+          <div class="control">
+            <textarea
+              class="textarea"
+              placeholder="Texto"
+              name="mensaje"
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-link" type="submit">Enviar</button>
+          </div>
+        </div>
+      </section>
+    </form>
+
+    <script src="{% static 'myApp/js/index.js' %}"></script>
+  </body>
+</html>
